@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="app.js" defer></script>
+    <title>Form</title>
 </head>
 <body>
+    <div id="form">
     <form>
         <div class="formBox">
             <!-- <label>Name</label> -->
@@ -30,6 +33,18 @@
             <label for="id">ID: </label>
             <input type="text" name="id" id="id" placeholder="0000000000"> 
         </div>
+        <!-- <div>
+            <label for="married">Married </label>
+            <input type="checkbox" name="married" id="married">
+        </div> -->
+        <div>
+            <label for="married">Married</label>
+            <input type="radio" name="married" id="married" value="Married">
+            <label for="unmarried">Unmarried</label>
+            <input type="radio" name="married" id="unmarried" value="Unmarried">
+        </div>
+        <button>Next</button>
     </form>
+    </div>
 </body>
 </html>
