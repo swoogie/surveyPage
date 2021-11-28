@@ -1,50 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="app.js" defer></script>
     <title>Form</title>
-</head>
-<body>
-    <div id="form">
-    <form>
-        <div class="formBox">
-            <!-- <label>Name</label> -->
-            <input type="text" name="name" id="name" placeholder="Name"/>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progressbars">
+        <div class="progressBarMT"></div>
+        <div class="progressBar" id="progress"></div>
+      </div>
+      <form class="forms" id="form1">
+        <div class="row">
+          <label for="firstname">First Name</label>
+          <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            placeholder="Your name"
+          />
         </div>
-        <div class ="formBox">
-            <!-- <label>Surname</label> -->
-            <input type="text" name="surname" id="surname" placeholder="Surname"/>
+        <div class="row">
+          <label for="lastname">Last Name</label>
+          <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            placeholder="Your last name"
+            
+          />
         </div>
-        <div> 
-            <label for="male">Male</label>
-            <input type="radio" name="gender" id="male" value="Male">
-            <label for="female">Female</label>
-            <input type="radio" name="gender" id="female" value="Female">
+        <div class="row">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender">
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="helicopter">Apache helicopter</option>
+          </select>
         </div>
-        <div>
-            <label for="birthday">Birthday: </label>
-            <input type="date" name="birthday" id="birthday" placeholder="dd-mm-yyyy" value="">
+        <!--  -->
+      </form>
+      <div class="buttonrow"></div>
+      <form class="forms" id="form2">
+        <div class="row">
+          <label for="birthday">Birthday</label>
+          <input type="date" id="birthday" name="birthday" />
         </div>
-        <div>
-            <label for="id">ID: </label>
-            <input type="text" name="id" id="id" placeholder="0000000000"> 
+        <div class="row">
+          <label for="ID">ID</label>
+          <input type="text" id="ID" name="ID" placeholder="Your ID" />
         </div>
-        <!-- <div>
-            <label for="married">Married </label>
-            <input type="checkbox" name="married" id="married">
-        </div> -->
-        <div>
-            <label for="married">Married</label>
-            <input type="radio" name="married" id="married" value="Married">
-            <label for="unmarried">Unmarried</label>
-            <input type="radio" name="married" id="unmarried" value="Unmarried">
+        
+      </form>
+
+      <form class="forms" id="form3">
+        <div class="row">
+            <label for="education">Education</label>
+            <select id="education" name="education">
+              <option value="">Select</option>
+              <option value="mSchool">Middle school</option>
+              <option value="hSchool">High school</option>
+              <option value="VSchool">Vocational school</option>
+              <option value="college">College</option>
+              <option value="uni">University</option>
+            </select>
         </div>
-        <button>Next</button>
-    </form>
+        <div class="row">
+            <label for="gradDate">Graduation date</label>
+            <input type="date" id="birthday" name="birthday" />
+        </div>
+        <div class="row">
+            <label for="degree">Degree</label>
+            <select id="degree" name="degree">
+              <option value="">Select</option>
+              <option value="Bachelors">Bachelor's</option>
+              <option value="Masters">Master's</option>
+              <option value="Doctor">Doctoral</option>
+              <option value="NaN">Not applicable</option>
+            </select>
+        </div>
+      </form>
+
+      <form class="forms" id="form4">
+        <div class="row">
+            <label for="qualifications">Qualifications</label>
+            <textarea
+              id="qualifications"
+              name="qualifications"
+              placeholder="I'm a qualified..."
+              style="height: 200px"
+            ></textarea>
+        </div>
+      </form>
+
+      <form class="forms" id="form5">
+        <div class="row">
+            <label for="phone">Phone number</label>
+            <input
+              type="text"
+              id="phone"
+              name="phone"
+              placeholder="Your phone number"
+            />
+          </div>
+          <div class="row">
+            <label for="phone">Email</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Your email"
+            />
+          </div>
+          <div class="row">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              placeholder="Home Address"
+            />
+          </div>
+      </form>
+
+      <form class="forms" id="form6">
+        <div class="row">
+            <label for="othContacts">Other</label>
+            <textarea
+              id="othContacts"
+              name="othContacts"
+              placeholder="Other contacts"
+            ></textarea>
+        </div>
+      </form>
+
+      <form class="forms" id="form7">
+        <div class="row">
+            <label for="mStatus">Marital status</label>
+            <select id="mStatus" name="mStatus">
+              <option value="">Select</option>
+              <option value="Married">Married</option>
+              <option value="Unmarried">Unmarried</option>
+              <option value="Divorced">Divorced</option>
+            </select>
+          </div>
+      </form>
+
+      <form class="forms" id="form8">
+        <div class="row">
+            <label for="child">Add child</label>
+          </div>
+      </form>
+
+      <form class="forms" id="form9">
+        <div class="row">
+            <p>form9</p>
+          </div>
+      </form>
+
+      <div class="buttonrow">
+        <input type="button" value="Next" id="next1" />
+        <input type="button" value="Back" class="back" id="back1" />
+      </div>
     </div>
-</body>
+  </body>
 </html>
