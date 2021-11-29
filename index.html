@@ -81,12 +81,16 @@
               <option value="Bachelors">Bachelor's</option>
               <option value="Masters">Master's</option>
               <option value="Doctor">Doctoral</option>
-              <option value="NaN">Not applicable</option>
+              <option value="notApplicable">Not applicable</option>
             </select>
         </div>
       </form>
 
       <form class="forms" id="form4">
+        <div class="row">
+            <label for="educationalInstitution">Educational institution</label>
+            <input type="text" id="educationalInstitution" name="educationalInstitution" placeholder="I studied at...">
+        </div>
         <div class="row">
             <label for="qualifications">Qualifications</label>
             <textarea
@@ -173,11 +177,53 @@
                 <option value="mpleave" >Maternal/Paternal leave</option>
             </select>
         </div>
-        <div class="row" id="uneMPRow" hidden> 
-            <label id="unemploymentLabel" style="visibility: hidden; position: absolute;" for="reasonUnemployment">Reason for unemployment</label>
-            <input type="text" name="reasonUnemployment" id="reasonUnemployment" placeholder="Unemployed due to..." hidden>
-            
+        <div class="row"> 
+            <label id="unemploymentLabel" style="visibility: hidden;" for="reasonUnemployment">Reason for unemployment</label>
+            <input type="text" name="reasonUnemployment" id="reasonUnemployment" placeholder="Unemployed due to..." style="visibility: hidden;">
         </div>
+        <div class="row">
+            <label id="mpleaveDate" style="visibility: hidden; position: relative; top:-93px;" for="mpDate">M/P leave end date</label>
+            <input type="date" name="mpDate" id="mpDate" style="visibility: hidden; position: relative; top:-93px;">
+        </div>
+      </form>
+      <form class="forms" id="form10">
+            <div class="row">
+                <label for="eduInst">Educational institution</label>
+                <input type="text" name="eduInst" id="eduInst" placeholder="Currently studying at...">
+            </div>
+            <div class="row">
+                <label id="pursuedDegree" for="pDegree">Pursued degree</label>
+            <select id="pDegree" name="pDegree">
+                <option value="" hidden>Select</option>
+                <option value="Bachelors">Bachelor's</option>
+                <option value="Masters">Master's</option>
+                <option value="Doctor">Doctoral</option>
+            </select>
+            </div>
+            <div class="row">
+            <label id="studyYear" for="stYear">Study year</label>
+            <select id="stYear" name="stYear">
+                <option value="" hidden>Select</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+            </div>
+      </form>
+      <form class="forms" id="form11">
+          <div class="row">
+            <label id="workPlace" for="wPlace">Place of work</label>
+            <input type="text" name="wPlace" id="wPlace" placeholder="I work at...">
+          </div>
+          <div class="row">
+            <label id="expr" for="exp">Experience (years)</label>
+            <input type="text" name="exp" id="exp" placeholder="I've been working for...">
+          </div>
+          <div class="row">
+            <label id="occu" for="occ">Occupation</label>
+            <input type="text" name="occ" id="occ" placeholder="I am a...">
+          </div>
       </form>
       <div class="buttonrow">
         <input type="button" value="Next" id="next1">

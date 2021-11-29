@@ -28,6 +28,10 @@ textarea{
     border-radius: 4px;
     box-sizing: border-box;
 }
+#qualifications{
+    max-height: 140px;
+}
+
 label {
     padding: 12px 12px 12px 0;
     display: inline-block;
@@ -91,7 +95,7 @@ input[type=submit]:hover{
 }
 .progressBar{
     position: relative;
-    width: 10%;
+    width: 0%;
     top: -5px;
     height: 5px;
     background-color: #ff6600;

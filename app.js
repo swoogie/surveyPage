@@ -2,12 +2,13 @@ var prog = document.getElementById("progress");
 var next1 = document.getElementById("next1");
 var back1 = document.getElementById("back1");
 
-let progress = 10;
-let formLimit = 10;
+let progress = 0;
+let formLimit = 11;
 let formIndex = 1;
 let married = false;
 
 var marital = document.getElementById("mStatus")
+var workStatus = document.getElementById("workStatus")
 
 let person = {
     firstName: null,
@@ -45,6 +46,29 @@ function logValue(){
 }
 
 marital.addEventListener('change', logValue);
+
+function logValueW(){
+    switch(this.value){
+        case 'studying':
+            break;
+        case 'employed':
+            break;
+        case 'unemployed':
+            document.getElementById("unemploymentLabel").style.visibility = "visible";
+            document.getElementById("reasonUnemployment").style.visibility = "visible"; 
+            document.getElementById("mpleaveDate").style.visibility = "hidden";
+            document.getElementById("mpDate").style.visibility = "hidden";
+            break;
+        case 'mpleave':
+            document.getElementById("mpleaveDate").style.visibility = "visible";
+            document.getElementById("mpDate").style.visibility = "visible";
+            document.getElementById("unemploymentLabel").style.visibility = "hidden";
+            document.getElementById("reasonUnemployment").style.visibility = "hidden"; 
+            break;
+    }
+}
+
+workStatus.addEventListener('change', logValueW)
 
 back1.onclick = function(){
     var currentForm = document.getElementById("form"+formIndex);
