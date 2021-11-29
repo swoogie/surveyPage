@@ -182,8 +182,8 @@
             <input type="text" name="reasonUnemployment" id="reasonUnemployment" placeholder="Unemployed due to..." style="visibility: hidden;">
         </div>
         <div class="row">
-            <label id="mpleaveDate" style="visibility: hidden; position: relative; top:-93px;" for="mpDate">M/P leave end date</label>
-            <input type="date" name="mpDate" id="mpDate" style="visibility: hidden; position: relative; top:-93px;">
+            <label class="mpleaveClass" id="mpleaveDate" for="mpDate">M/P leave end date</label>
+            <input class="mpleaveClass" type="date" name="mpDate" id="mpDate">
         </div>
       </form>
       <form class="forms" id="form10">
@@ -225,6 +225,12 @@
             <input type="text" name="occ" id="occ" placeholder="I am a...">
           </div>
       </form>
+      <form class="forms" id="form12">
+          <div class="row">
+              <p style="margin: auto;">Form Submitted!</p>
+          </div>
+      </form>
+
       <div class="buttonrow">
         <input type="button" value="Next" id="next1">
         <input type="button" value="Back" class="back" id="back1">

@@ -3,7 +3,7 @@ var next1 = document.getElementById("next1");
 var back1 = document.getElementById("back1");
 
 let progress = 0;
-let formLimit = 11;
+let formLimit = 12;
 let formIndex = 1;
 let married = false;
 
@@ -20,7 +20,8 @@ let person = {
     email: null,
     otherContacts: null,
     address: null,
-    maritalStatus: null
+    maritalStatus: null,
+    employmentStatus: null
 };
 
 function logValue(){
@@ -50,20 +51,30 @@ marital.addEventListener('change', logValue);
 function logValueW(){
     switch(this.value){
         case 'studying':
-            break;
-        case 'employed':
-            break;
-        case 'unemployed':
-            document.getElementById("unemploymentLabel").style.visibility = "visible";
-            document.getElementById("reasonUnemployment").style.visibility = "visible"; 
+            document.getElementById("unemploymentLabel").style.visibility = "hidden";
+            document.getElementById("reasonUnemployment").style.visibility = "hidden"; 
             document.getElementById("mpleaveDate").style.visibility = "hidden";
             document.getElementById("mpDate").style.visibility = "hidden";
             break;
-        case 'mpleave':
-            document.getElementById("mpleaveDate").style.visibility = "visible";
-            document.getElementById("mpDate").style.visibility = "visible";
+        case 'employed':
             document.getElementById("unemploymentLabel").style.visibility = "hidden";
             document.getElementById("reasonUnemployment").style.visibility = "hidden"; 
+            document.getElementById("mpleaveDate").style.visibility = "hidden";
+            document.getElementById("mpDate").style.visibility = "hidden";
+            break;
+        case 'unemployed':
+            document.getElementById("mpleaveDate").style.visibility = "hidden";
+            document.getElementById("mpDate").style.visibility = "hidden";
+            document.getElementById("unemploymentLabel").style.visibility = "visible";
+            document.getElementById("reasonUnemployment").style.visibility = "visible"; 
+            next1.value = "submit";
+            break;
+        case 'mpleave':
+            document.getElementById("unemploymentLabel").style.visibility = "hidden";
+            document.getElementById("reasonUnemployment").style.visibility = "hidden"; 
+            document.getElementById("mpleaveDate").style.visibility = "visible";
+            document.getElementById("mpDate").style.visibility = "visible";
+            next1.value = "submit";
             break;
     }
 }
@@ -75,10 +86,20 @@ back1.onclick = function(){
     formIndex -= 1;
     progress -= 10;
     var nextForm = document.getElementById("form"+formIndex);
+    if(formIndex === 10 && person.employmentStatus == "employed"){
+        formIndex -= 1;
+        nextForm = document.getElementById("form"+formIndex);
+    }
     if(formIndex === 8 && married === false){
         formIndex -= 1;
         progress -= 10;
         nextForm = document.getElementById("form"+formIndex);
+    }
+    if(formIndex === 11 || formIndex === 10){
+        next1.value = "submit";
+    }
+    else{
+        next1.value = "next";
     }
     prog.style.width = progress+"%";
     nextForm.style.left = "20px";
@@ -94,6 +115,8 @@ function correct(){
     person.lastName = document.getElementById("lastname").value;
     person.gender = document.getElementById("gender").value;
     person.maritalStatus = document.getElementById("mStatus").value;
+    person.employmentStatus = document.getElementById("workStatus").value;
+
     
     if(person.firstName.length < 2){
         return false;
@@ -107,6 +130,8 @@ function correct(){
     return true;
 }
 
+let skip = false;
+
 next1.onclick = function(){
     if(correct()){
         var currentForm = document.getElementById("form"+formIndex);
@@ -115,6 +140,35 @@ next1.onclick = function(){
             progress += 10;
         }
         var nextForm = document.getElementById("form"+formIndex);
+        
+        if(formIndex === 10 && (person.employmentStatus == "unemployed" || person.employmentStatus == "mpleave")){
+            next1.hidden;
+            nextForm = document.getElementById("form12");
+            progress = 100;
+            next1.style.visibility = "hidden";
+            back1.style.visibility = "hidden";
+        }
+        else if(formIndex === 10 && person.employmentStatus == "employed"){
+            formIndex += 1;
+            progress += 10;
+            nextForm = document.getElementById("form"+formIndex);
+        }
+        if(formIndex === 11 && person.employmentStatus == "studying"){
+            formIndex += 1;
+            nextForm = document.getElementById("form"+formIndex);
+        }
+        if(formIndex === 11 || formIndex === 10){
+            next1.value = "submit";
+        }
+        else{
+            next1.value = "next";
+        }
+        if(formIndex === 12){
+            next1.style.visibility = "hidden";
+            back1.style.visibility = "hidden";
+            nextForm = document.getElementById("form12");
+            progress = 100;
+        }
         if(formIndex === 7 && married && person.gender == "female"){
             document.getElementById("maidenNameLabel").style.visibility = "visible";
             document.getElementById("mName").hidden = false;
