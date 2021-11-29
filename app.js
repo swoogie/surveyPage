@@ -26,15 +26,20 @@ function logValue(){
     switch(this.value){
         case 'Married':
             married = true;
-            console.log("married =" +married)
+            if(person.gender == "female"){
+                document.getElementById("maidenNameLabel").style.visibility = "visible";
+                document.getElementById("mName").hidden = false;
+            }
             break;
         case 'Unmarried':
             married = false;
-            console.log("married =" +married)
+            document.getElementById("maidenNameLabel").style.visibility = "hidden";
+            document.getElementById("mName").hidden = true;
             break;
         case 'Divorced':
             married = false;
-            console.log("married =" +married)
+            document.getElementById("maidenNameLabel").style.visibility = "hidden";
+            document.getElementById("mName").hidden = true;
             break;
     }
 }
@@ -78,17 +83,22 @@ function correct(){
     return true;
 }
 
-
 next1.onclick = function(){
     if(correct()){
-        console.log(person.firstName);
-        console.log(person.maritalStatus);
         var currentForm = document.getElementById("form"+formIndex);
         if(formIndex < formLimit){
             formIndex += 1;
             progress += 10;
         }
         var nextForm = document.getElementById("form"+formIndex);
+        if(formIndex === 7 && married && person.gender == "female"){
+            document.getElementById("maidenNameLabel").style.visibility = "visible";
+            document.getElementById("mName").hidden = false;
+        }
+        else{
+            document.getElementById("maidenNameLabel").style.visibility = "hidden";
+            document.getElementById("mName").hidden = true;
+        }
         if(formIndex === 8 && married === false){
             formIndex += 1;
             progress += 10;
