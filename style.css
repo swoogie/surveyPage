@@ -140,8 +140,10 @@ form{
     top: -19px;
 }
 
-
-
+p{
+    text-align: center;
+    vertical-align: middle;
+}
 
 .mpleaveClass{
     visibility: hidden; 
