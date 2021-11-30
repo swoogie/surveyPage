@@ -120,6 +120,29 @@ form{
     visibility: hidden;
 }
 
+#childName{
+
+    width: 40%;
+}
+
+#childSName{
+    width: 40%;
+}
+
+#clearChild{
+    position: relative;
+    left: 50px;
+    top: -11px;
+}
+
+#addChild{
+    position: relative;
+    top: -19px;
+}
+
+
+
+
 .mpleaveClass{
     visibility: hidden; 
     position: relative; 
