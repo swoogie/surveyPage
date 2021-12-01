@@ -137,6 +137,14 @@ function correct(){
     person.firstName = document.getElementById("firstname").value;
     person.lastName = document.getElementById("lastname").value;
     person.gender = document.getElementById("gender").value;
+    person.id = document.getElementById("ID").value;
+    person.education = document.getElementById("education").value;
+    person.phoneNumber = document.getElementById("phone").value;
+    person.email = document.getElementById("email").value;
+    person.maritalStatus = document.getElementById("mStatus").value;
+    person.employmentStatus = document.getElementById("workStatus").value;
+    person.otherContacts = document.getElementById("othContacts").value;
+    person.address = document.getElementById("address").value;
     person.maritalStatus = document.getElementById("mStatus").value;
     person.employmentStatus = document.getElementById("workStatus").value;
 
